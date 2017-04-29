@@ -1,0 +1,14 @@
+{
+    "bot": {
+        "user": "pug"
+    },
+    "ai": {
+        "key": "..."
+    },
+    "mastodon": {
+        "Server": "https://mastodon.m0t0k1ch1.com",
+        "ClientId": "...",
+        "ClientSecret": "...",
+        "AccessToken": "..."
+    }
+}
