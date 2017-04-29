@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	LogPrefix = "[mastodon-pug] "
+	LogPrefix = "mastodon-pug: "
 )
 
 type Bot struct {
