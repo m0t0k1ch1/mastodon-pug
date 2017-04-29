@@ -82,6 +82,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	bot := newBot(config)
-	bot.run()
+	newBot(config).run()
 }
