@@ -1,0 +1,8 @@
+hash: 37ec3e0e3ffe76a3cf40595fb369d1b7679f4d5e8f217af33933a1c7c39fa034
+updated: 2017-04-30T01:55:48.657285916+09:00
+imports:
+- name: github.com/m0t0k1ch1/go-ulai
+  version: aa96d239141428079b2d7c2efdc69ee818e0c7c8
+  repo: git@github.com:m0t0k1ch1/go-ulai.git
+  vcs: git
+testImports: []
