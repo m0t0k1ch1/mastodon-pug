@@ -1,6 +1,8 @@
 hash: 4d37181e74800c2f14fb868f44af55063cb0cd9116daf6ba431c1f319cd67488
-updated: 2017-04-30T02:05:50.462526467+09:00
+updated: 2017-04-30T04:01:33.51232873+09:00
 imports:
+- name: github.com/gorilla/websocket
+  version: a91eba7f97777409bc2c443f5534d41dd20c5720
 - name: github.com/m0t0k1ch1/go-ulai
   version: aa96d239141428079b2d7c2efdc69ee818e0c7c8
   repo: git@github.com:m0t0k1ch1/go-ulai.git
