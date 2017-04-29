@@ -82,5 +82,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	NewBot(config).Run()
+	if err := NewBot(config).Run(); err != nil {
+		log.Fatal(err)
+	}
 }
