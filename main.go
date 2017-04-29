@@ -35,7 +35,7 @@ type Bot struct {
 	mstdn  *mastodon.Client
 }
 
-func newBot(config Config) *Bot {
+func NewBot(config Config) *Bot {
 	ai := ulai.NewClient()
 	ai.SetKey(config.Ai.Key)
 
@@ -46,7 +46,7 @@ func newBot(config Config) *Bot {
 	}
 }
 
-func (bot *Bot) run() error {
+func (bot *Bot) Run() error {
 	evChan, err := bot.mstdn.StreamingUser(context.Background())
 	if err != nil {
 		return err
@@ -82,5 +82,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	newBot(config).run()
+	NewBot(config).Run()
 }
