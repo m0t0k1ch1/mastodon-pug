@@ -2,5 +2,3 @@ package: github.com/m0t0k1ch1/mastodon-pug
 import:
 - package: github.com/mattn/go-mastodon
 - package: github.com/m0t0k1ch1/go-ulai
-  repo: git@github.com:m0t0k1ch1/go-ulai.git
-  vcs: git

@@ -1,12 +1,10 @@
-hash: 4d37181e74800c2f14fb868f44af55063cb0cd9116daf6ba431c1f319cd67488
-updated: 2017-04-30T04:01:33.51232873+09:00
+hash: 62c428bbe21e2973473b5e33b6af1efd4b5b22d352b8bf5f0fe2a4534bd5217f
+updated: 2017-05-01T22:32:44.593220579+09:00
 imports:
 - name: github.com/gorilla/websocket
   version: a91eba7f97777409bc2c443f5534d41dd20c5720
 - name: github.com/m0t0k1ch1/go-ulai
-  version: aa96d239141428079b2d7c2efdc69ee818e0c7c8
-  repo: git@github.com:m0t0k1ch1/go-ulai.git
-  vcs: git
+  version: 70eab1d675193ebd52f1e7598cac72a836c3522d
 - name: github.com/mattn/go-mastodon
-  version: 70b3dbf5488859738d02a5f741072ce0359bb90d
+  version: 759ce4a33160acab411081d5b6e9c856cfe11f7d
 testImports: []
