@@ -60,7 +60,6 @@ func (bot *Bot) Run() error {
 					return
 				}
 
-				// extract message
 				fromMessage, err := ExtractMessage(notification.Status.Content)
 				if err != nil {
 					bot.log(err)
@@ -69,7 +68,6 @@ func (bot *Bot) Run() error {
 				bot.log(notification.Account.Acct+":", fromMessage)
 				fromMessage = strings.TrimPrefix(fromMessage, "@"+bot.config.Bot.Name)
 
-				// build response message
 				toMessage, err := bot.ai.Chat(context.Background(), fromMessage)
 				if err != nil {
 					bot.log(err)
@@ -81,7 +79,6 @@ func (bot *Bot) Run() error {
 				)
 				bot.log(bot.config.Bot.Name+":", toMessage)
 
-				// post message
 				if _, err := bot.mstdn.PostStatus(context.Background(), &mastodon.Toot{
 					Status:      toMessage,
 					InReplyToID: notification.Status.ID,
