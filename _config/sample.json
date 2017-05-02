@@ -1,4 +1,11 @@
 {
+    "bot": {
+        "name": "pug",
+        "response": {
+            "visibility": "unlisted",
+            "delay": 3
+        }
+    },
     "ai": {
         "key": "..."
     },
