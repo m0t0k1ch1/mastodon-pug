@@ -32,7 +32,7 @@ func NewBot(config Config) *Bot {
 		ai:     ai,
 		mstdn:  mastodon.NewClient(config.Mastodon),
 		logger: log.New(
-			os.Stdout,
+			os.Stderr,
 			LogPrefix,
 			log.Ldate|log.Ltime,
 		),
@@ -40,7 +40,11 @@ func NewBot(config Config) *Bot {
 }
 
 func (bot *Bot) log(v ...interface{}) {
-	bot.logger.Println(v)
+	bot.logger.Println(v...)
+}
+
+func (bot *Bot) logError(err error) {
+	bot.log("[ERROR]", err)
 }
 
 func (bot *Bot) Run() error {
@@ -62,7 +66,7 @@ func (bot *Bot) Run() error {
 
 				fromMessage, err := ExtractMessage(notification.Status.Content)
 				if err != nil {
-					bot.log(err)
+					bot.logError(err)
 					return
 				}
 				bot.log(notification.Account.Acct+":", fromMessage)
@@ -70,7 +74,7 @@ func (bot *Bot) Run() error {
 
 				toMessage, err := bot.ai.Chat(context.Background(), fromMessage)
 				if err != nil {
-					bot.log(err)
+					bot.logError(err)
 					return
 				}
 				toMessage = fmt.Sprintf(
@@ -84,9 +88,11 @@ func (bot *Bot) Run() error {
 					InReplyToID: notification.Status.ID,
 					Visibility:  bot.config.Bot.Response.Visibility,
 				}); err != nil {
-					bot.log(err)
+					bot.logError(err)
 				}
 			})
+		case *mastodon.ErrorEvent:
+			bot.logError(evType)
 		}
 	}
 
